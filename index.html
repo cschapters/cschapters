@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Chapters | Creative Studio — Every Brand Has a Story</title>
+  <meta name="description" content="CS Chapters is a two-founder creative studio creating social media designs, product advertisements and promotional graphics for growing brands." />
+  <meta name="theme-color" content="#0A0E1A" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CS Chapters | Creative Studio" />
+  <meta property="og:description" content="Every brand has a story. Let’s design its next chapter." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Google Fonts: Space Grotesk (Headings) & DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#060913',
+              900: '#0A0E1A',
+              800: '#111827',
+              700: '#1E293B',
+            },
+            violet: {
+              500: '#8B5CF6',
+              600: '#7C3AED',
+              700: '#6D28D9',
+            },
+            orange: {
+              400: '#FB923C',
+              500: '#F97316',
+              600: '#EA580C',
+            },
+            offwhite: '#F8FAFC',
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'sans-serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+          },
+          animation: {
+            'float-slow': 'float 7s ease-in-out infinite',
+            'float-delayed': 'float 9s ease-in-out 2s infinite',
+            'pulse-glow': 'pulseGlow 5s ease-in-out infinite',
+            'spin-slow': 'spin 28s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-14px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.45', transform: 'scale(1)' },
+              '50%': { opacity: '0.75', transform: 'scale(1.06)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-padding-top: 5.5rem; }
+    :focus-visible { outline: 2px solid #FB923C; outline-offset: 4px; }
+    .skip-link { position: fixed; left: 1rem; top: 1rem; z-index: 100; transform: translateY(-180%); background: #F97316; color: white; padding: .75rem 1rem; border-radius: .75rem; font-weight: 700; }
+    .skip-link:focus { transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    /* Custom Glassmorphism & Base Polish */
+    body {
+      background-color: #0A0E1A;
+      color: #F8FAFC;
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(17, 24, 39, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124, 58, 237, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.25), 0 0 20px rgba(249, 115, 22, 0.1);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #F8FAFC 20%, #A78BFA 65%, #F97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-accent {
+      background: linear-gradient(135deg, #7C3AED 0%, #F97316 100%);
+    }
+
+    .grid-bg {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060913;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7C3AED;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-violet-600 selection:text-white">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <!-- Ambient Background Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full bg-violet-600/20 blur-[130px] animate-pulse-glow"></div>
+    <div class="absolute top-1/3 -right-32 w-[440px] h-[440px] rounded-full bg-orange-500/15 blur-[130px] animate-pulse-glow" style="animation-delay: 2.5s;"></div>
+    <div class="absolute bottom-0 left-1/4 w-[500px] h-[350px] rounded-full bg-violet-700/15 blur-[140px]"></div>
+    <div class="absolute inset-0 grid-bg"></div>
+  </div>
+
+  <!-- =========================================================
+       1. STICKY NAVIGATION BAR
+  ========================================================== -->
+  <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 border-b border-white/5 bg-navy-900/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo: Connected Geometric CS Monogram -->
+        <a href="#home" class="flex items-center gap-3.5 group focus:outline-none">
+          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-navy-800 to-navy-950 border border-white/15 flex items-center justify-center shadow-lg group-hover:border-orange-500/50 transition-all duration-300">
+            <!-- Custom Connected CS Monogram SVG -->
+            <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CS Chapters Monogram">
+              <defs>
+                <linearGradient id="csGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#8B5CF6" />
+                  <stop offset="55%" stop-color="#C084FC" />
+                  <stop offset="100%" stop-color="#F97316" />
+                </linearGradient>
+              </defs>
+              <!-- Continuous connected path forming C flowing seamlessly into S -->
+              <path d="M32 14C20.954 14 12 22.059 12 32C12 41.941 20.954 50 32 50C38.5 50 43.5 46.8 43.5 41.5C43.5 36.2 38.5 33.8 32 32C25.5 30.2 21.5 27.8 21.5 23C21.5 18.2 26.2 14 33.5 14C40.5 14 46.5 17.5 49.5 22.5" 
+                    stroke="url(#csGrad)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Chapter Spark / Accent Dot -->
+              <circle cx="50" cy="44" r="3.5" fill="#F97316" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading font-bold text-lg sm:text-xl tracking-wider text-offwhite leading-none">
+              CS CHAPTERS
+            </span>
+            <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400 mt-1 font-medium">
+              Creative Studio
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
+          <a href="#services" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Services</a>
+          <a href="#portfolio" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Portfolio</a>
+          <a href="#process" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Process</a>
+          <a href="#about" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">About</a>
+          <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Contact</a>
+        </nav>
+
+        <!-- Primary CTA + Mobile Menu Button -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-heading font-semibold text-white gradient-accent shadow-lg shadow-violet-600/25 hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <span>Start Your Chapter</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger Button -->
+          <button id="mobile-menu-btn" type="button" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl bg-navy-800/80 border border-white/10 text-slate-200 hover:text-white hover:border-violet-500/50 transition-colors">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-navy-900/95 backdrop-blur-2xl px-4 pt-4 pb-6 space-y-2">
+      <a href="#home" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">Home</a>
+      <a href="#services" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">Services</a>
+      <a href="#portfolio" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">Portfolio</a>
+      <a href="#process" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">Process</a>
+      <a href="#about" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">About</a>
+      <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/5 hover:text-white">Contact</a>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl text-base font-heading font-semibold text-white gradient-accent shadow-lg">
+          <span>Start Your Chapter</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+  <!-- =========================================================
+       2. HERO SECTION
+  ========================================================== -->
+  <section id="home" class="relative z-10 pt-14 pb-20 lg:pt-24 lg:pb-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <!-- Studio Pill Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-card border border-violet-500/30 mb-7">
+            <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+            <span class="text-xs sm:text-sm font-medium tracking-wide text-slate-200">
+              Two Founders &bull; One Creative Vision
+            </span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.12] text-offwhite mb-6">
+            Every Brand Has a Story. <br class="hidden sm:inline" />
+            <span class="gradient-text">Let’s Design Its Next Chapter.</span>
+          </h1>
+
+          <!-- Subtext -->
+          <p class="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-9">
+            We are <strong class="text-white font-semibold">CS Chapters</strong>—a modern creative studio built by two founders with one shared creative vision. We craft scroll-stopping social media visuals, high-converting product ads, and cohesive brand campaigns that turn everyday businesses into unforgettable stories.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#portfolio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl font-heading font-semibold text-base text-white gradient-accent shadow-xl shadow-violet-600/25 hover:shadow-orange-500/30 hover:-translate-y-0.5 transition-all">
+              <span>Explore Portfolio</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+
+            <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I visited your portfolio website and would love to discuss a creative project for my brand.')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl font-heading font-semibold text-base text-offwhite glass-card border border-white/15 hover:border-orange-500/50 hover:bg-white/5 hover:-translate-y-0.5 transition-all">
+              <!-- WhatsApp Icon -->
+              <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                <path d="M12 2C6.486 2 2 6.486 2 12c0 1.815.49 3.591 1.421 5.151L2 22l4.989-1.392A9.954 9.954 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18.182c-1.576 0-3.116-.447-4.455-1.294l-.319-.202-3.307.923.941-3.224-.221-.332A8.148 8.148 0 013.818 12c0-4.512 3.67-8.182 8.182-8.182 4.512 0 8.182 3.67 8.182 8.182 0 4.512-3.67 8.182-8.182 8.182z"/>
+              </svg>
+              <span>Chat on WhatsApp</span>
+            </button>
+          </div>
+
+          <!-- Quick Trust Metrics -->
+          <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl font-bold text-white">07</p>
+              <p class="text-xs sm:text-sm text-slate-400">Industry Concepts</p>
+            </div>
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl font-bold text-orange-400">2x</p>
+              <p class="text-xs sm:text-sm text-slate-400">Creative Perspectives</p>
+            </div>
+            <div>
+              <p class="font-heading text-2xl sm:text-3xl font-bold text-violet-400">100%</p>
+              <p class="text-xs sm:text-sm text-slate-400">Custom Brand Focus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Interactive / Animated Geometric Visual Motif -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div id="hero-visual-card" class="relative w-full max-w-md aspect-square flex items-center justify-center">
+            
+            <!-- Rotating Outer Orbit Ring -->
+            <div class="absolute inset-4 rounded-full border border-dashed border-violet-500/30 animate-spin-slow"></div>
+            <div class="absolute inset-12 rounded-full border border-orange-500/20"></div>
+
+            <!-- Central Glass Showcase Emblem -->
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl glass-card border border-white/15 shadow-2xl flex flex-col items-center justify-center p-6 animate-float-slow">
+              <div class="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-orange-500 text-white text-xs font-heading font-semibold shadow-lg">
+                Chapter 01
+              </div>
+
+              <!-- Large Interactive Monogram -->
+              <svg class="w-28 h-28 mb-4 drop-shadow-[0_0_24px_rgba(124,58,237,0.45)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="heroMonogramGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#8B5CF6" />
+                    <stop offset="50%" stop-color="#D946EF" />
+                    <stop offset="100%" stop-color="#F97316" />
+                  </linearGradient>
+                </defs>
+                <path d="M32 14C20.954 14 12 22.059 12 32C12 41.941 20.954 50 32 50C38.5 50 43.5 46.8 43.5 41.5C43.5 36.2 38.5 33.8 32 32C25.5 30.2 21.5 27.8 21.5 23C21.5 18.2 26.2 14 33.5 14C40.5 14 46.5 17.5 49.5 22.5" 
+                      stroke="url(#heroMonogramGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="50" cy="44" r="4" fill="#F97316" />
+              </svg>
+
+              <p class="font-heading font-bold text-xl tracking-widest text-white">CS CHAPTERS</p>
+              <p class="text-xs text-slate-400 tracking-widest uppercase mt-1">Visual Storytelling</p>
+            </div>
+
+            <!-- Floating Badge 1: Social Campaigns -->
+            <div class="absolute top-6 left-2 sm:left-0 glass-card px-4 py-2.5 rounded-2xl border border-violet-500/30 shadow-xl flex items-center gap-2.5 animate-float-delayed">
+              <div class="w-8 h-8 rounded-lg bg-violet-600/30 flex items-center justify-center text-violet-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-heading font-semibold text-white">Brand Identity</p>
+                <p class="text-[11px] text-slate-400">Modern &amp; Minimal</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Conversion Ads -->
+            <div class="absolute bottom-8 right-2 sm:right-0 glass-card px-4 py-2.5 rounded-2xl border border-orange-500/30 shadow-xl flex items-center gap-2.5 animate-float-slow" style="animation-delay: 1.5s;">
+              <div class="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-heading font-semibold text-white">High-Impact Ads</p>
+                <p class="text-[11px] text-slate-400">Social &amp; Digital</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       3. SERVICES SECTION ("OUR SERVICES")
+  ========================================================== -->
+  <section id="services" class="relative z-10 py-20 lg:py-28 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-orange-400">What We Craft</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-offwhite mt-3 mb-5">Our Services</h2>
+        <p class="text-slate-300 text-base sm:text-lg">
+          Strategic, thumb-stopping visual assets designed to elevate how customers perceive and engage with your business online.
+        </p>
+      </div>
+
+      <!-- 4-Card Responsive Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        
+        <!-- Service 1: Social Media Designs -->
+        <div class="glass-card glass-card-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400 mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">Social Media Designs</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              Cohesive feed posts, story templates, and carousel graphics tailored to build a recognizable, trustworthy aesthetic across your brand channels.
+            </p>
+          </div>
+          <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I am interested in your Social Media Designs service.')" class="inline-flex items-center gap-2 text-sm font-heading font-semibold text-orange-400 hover:text-orange-300 transition-colors">
+            <span>Inquire About Service</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Service 2: Product Advertisements -->
+        <div class="glass-card glass-card-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">Product Advertisements</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              Clean, commercial-grade product showcase visuals engineered to highlight key features, build instant desire, and drive customer inquiries.
+            </p>
+          </div>
+          <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I would like to get Product Advertisements designed for my business.')" class="inline-flex items-center gap-2 text-sm font-heading font-semibold text-orange-400 hover:text-orange-300 transition-colors">
+            <span>Inquire About Service</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Service 3: Promotional Graphics -->
+        <div class="glass-card glass-card-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400 mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">Promotional Graphics</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              High-impact seasonal offers, launch announcements, event flyers, and digital banners crafted with clear visual hierarchy and bold typography.
+            </p>
+          </div>
+          <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I need Promotional Graphics for an upcoming offer or launch.')" class="inline-flex items-center gap-2 text-sm font-heading font-semibold text-orange-400 hover:text-orange-300 transition-colors">
+            <span>Inquire About Service</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+        <!-- Service 4: Instagram & Facebook Campaigns -->
+        <div class="glass-card glass-card-hover rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 mb-6">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">Instagram &amp; Facebook Campaigns</h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              Multi-creative ad sets formatted for Feeds, Stories, and Reels covers—built to stop the scroll and maximize engagement on Meta platforms.
+            </p>
+          </div>
+          <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I am looking for creative visuals for an Instagram & Facebook Campaign.')" class="inline-flex items-center gap-2 text-sm font-heading font-semibold text-orange-400 hover:text-orange-300 transition-colors">
+            <span>Inquire About Service</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="process" class="relative z-10 py-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-orange-400">A clear, collaborative workflow</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">From brief to final design</h2>
+        <p class="text-slate-300">A simple process keeps each project focused, collaborative and aligned with your brand.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="glass-card rounded-2xl p-6"><span class="font-heading text-sm text-orange-400">01 / DISCOVER</span><h3 class="text-xl font-bold text-white mt-3 mb-2">Tell us your goal</h3><p class="text-sm leading-relaxed text-slate-400">Share your business, audience, design needs, preferred style and deadline.</p></article>
+        <article class="glass-card rounded-2xl p-6"><span class="font-heading text-sm text-violet-300">02 / PLAN</span><h3 class="text-xl font-bold text-white mt-3 mb-2">Agree the direction</h3><p class="text-sm leading-relaxed text-slate-400">We discuss the scope, deliverables, timeline and quotation before work begins.</p></article>
+        <article class="glass-card rounded-2xl p-6"><span class="font-heading text-sm text-orange-400">03 / CREATE</span><h3 class="text-xl font-bold text-white mt-3 mb-2">Design &amp; refine</h3><p class="text-sm leading-relaxed text-slate-400">We develop the agreed creative direction and share a preview for feedback.</p></article>
+        <article class="glass-card rounded-2xl p-6"><span class="font-heading text-sm text-violet-300">04 / DELIVER</span><h3 class="text-xl font-bold text-white mt-3 mb-2">Receive your files</h3><p class="text-sm leading-relaxed text-slate-400">After approval and completion of the agreed scope, we deliver the final files.</p></article>
+      </div>
+      <p class="text-center text-xs text-slate-500 mt-6">Exact timelines, file formats, revision rounds and fees are confirmed with each project before it starts.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       4. PORTFOLIO SHOWCASE ("FEATURED CONCEPTS")
+  ========================================================== -->
+  <section id="portfolio" class="relative z-10 py-20 lg:py-28 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+        <div class="max-w-2xl">
+          <span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-violet-400">Creative Direction &amp; Range</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-offwhite mt-3 mb-4">Featured Concepts</h2>
+          <p class="text-slate-300 text-base sm:text-lg">
+            Explore seven original sample concepts created to show the range of visual directions we can develop for different industries.
+          </p>
+        </div>
+
+        <!-- Concept Studio Note -->
+        <div class="glass-card px-4 py-3 rounded-2xl border border-orange-500/25 max-w-md">
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <span class="text-orange-400 font-semibold">Studio Note:</span> These are self-initiated concept samples, not commissioned client projects. They demonstrate our design direction and can be adapted for your brand.
+          </p>
+        </div>
+      </div>
+
+      <!-- Interactive Category Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2.5 mb-10" id="portfolio-filters">
+        <button type="button" data-filter="all" class="filter-btn active px-4 py-2.5 rounded-xl text-sm font-heading font-semibold transition-all bg-violet-600 text-white shadow-lg shadow-violet-600/25">
+          All Concepts (07)
+        </button>
+        <button type="button" data-filter="food" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-heading font-medium text-slate-300 glass-card hover:text-white hover:border-violet-500/40 transition-all">
+          Food &amp; Dining
+        </button>
+        <button type="button" data-filter="lifestyle" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-heading font-medium text-slate-300 glass-card hover:text-white hover:border-violet-500/40 transition-all">
+          Fashion &amp; Wellness
+        </button>
+        <button type="button" data-filter="services" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-heading font-medium text-slate-300 glass-card hover:text-white hover:border-violet-500/40 transition-all">
+          Travel &amp; Outdoor
+        </button>
+        <button type="button" data-filter="tech" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-heading font-medium text-slate-300 glass-card hover:text-white hover:border-violet-500/40 transition-all">
+          Tech &amp; Product
+        </button>
+      </div>
+
+      <!-- 7 Portfolio Concept Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7" id="portfolio-grid">
+
+        <!-- CONCEPT 01: Bakery Advertisement -->
+        <article data-category="food" onclick="openConceptModal(0)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <!-- Custom CSS/SVG Visual Mockup -->
+          <div class="relative h-64 bg-gradient-to-br from-amber-950 via-orange-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-amber-400/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-200 text-xs font-heading font-semibold">01 &bull; Bakery Ad</span>
+              <span class="text-xs text-amber-200/80 font-medium">1080 &times; 1080</span>
+            </div>
+            <!-- Illustrative Artisan Croissant / Bakery Badge SVG -->
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-2xl bg-amber-400/15 border border-amber-300/30 flex items-center justify-center mb-3 group-hover:rotate-6 transition-transform">
+                <svg class="w-9 h-9 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-4.5 0-8 2.5-8 6 0 2.2 1.5 4 3.5 4.8L6 19h12l-1.5-5.2c2-.8 3.5-2.6 3.5-4.8 0-3.5-3.5-6-8-6z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v2h6v-2" />
+                </svg>
+              </div>
+              <p class="font-heading text-xl font-bold text-amber-50 tracking-tight">GOLDEN CRUMB</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-amber-300 mt-0.5">Fresh Sourdough &amp; Pastries</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-amber-100/90 border-t border-amber-200/15 pt-3">
+              <span>Weekend Morning Box</span>
+              <span class="px-2.5 py-0.5 rounded bg-amber-400 text-navy-950 font-bold">20% OFF</span>
+            </div>
+          </div>
+          <!-- Card Meta -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">01. Bakery Advertisement</h3>
+              <p class="text-sm text-slate-400 mt-2">Warm, appetizing social media promo layout crafted for artisan bakeries, cafes, and weekend pastry drops.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 02: Fashion Promotion -->
+        <article data-category="lifestyle" onclick="openConceptModal(1)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <div class="relative h-64 bg-gradient-to-br from-fuchsia-950 via-violet-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute -left-6 -top-6 w-44 h-44 rounded-full bg-fuchsia-500/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-fuchsia-500/20 border border-fuchsia-400/30 text-fuchsia-200 text-xs font-heading font-semibold">02 &bull; Fashion Promo</span>
+              <span class="text-xs text-fuchsia-200/80 font-medium">Story &amp; Feed</span>
+            </div>
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-white/10 border border-fuchsia-300/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-fuchsia-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l3 5h5l-4 4 1.5 6L12 14l-5.5 3L8 11 4 7h5l3-5z" />
+                </svg>
+              </div>
+              <p class="font-heading text-2xl font-bold text-white tracking-[0.18em]">VELOURA</p>
+              <p class="text-xs uppercase tracking-[0.25em] text-fuchsia-300 mt-1">Autumn Capsule Drop</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-fuchsia-100/90 border-t border-fuchsia-200/15 pt-3">
+              <span>Limited Editorial Run</span>
+              <span class="px-2.5 py-0.5 rounded bg-white text-navy-950 font-bold">SHOP NOW</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">02. Fashion Promotion</h3>
+              <p class="text-sm text-slate-400 mt-2">High-contrast editorial typography and sleek framing built for clothing labels, boutiques, and seasonal launches.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 03: Restaurant Promotion -->
+        <article data-category="food" onclick="openConceptModal(2)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <div class="relative h-64 bg-gradient-to-br from-rose-950 via-red-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute right-0 bottom-0 w-44 h-44 rounded-full bg-orange-500/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-200 text-xs font-heading font-semibold">03 &bull; Restaurant Ad</span>
+              <span class="text-xs text-rose-200/80 font-medium">Meta Campaign</span>
+            </div>
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-2xl bg-rose-500/15 border border-rose-300/30 flex items-center justify-center mb-3 group-hover:-rotate-6 transition-transform">
+                <svg class="w-8 h-8 text-rose-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <p class="font-heading text-xl font-bold text-white tracking-wide">EMBER &amp; SPICE</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-orange-300 mt-0.5">Wood-Fired Signature Dining</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-rose-100/90 border-t border-rose-200/15 pt-3">
+              <span>Friday Feast Combo</span>
+              <span class="px-2.5 py-0.5 rounded bg-orange-500 text-white font-bold">BOOK TABLE</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">03. Restaurant Promotion</h3>
+              <p class="text-sm text-slate-400 mt-2">Bold culinary promotion template designed to spotlight signature dishes, combo deals, and reservation CTAs.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 04: Landscape Service -->
+        <article data-category="services" onclick="openConceptModal(3)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <div class="relative h-64 bg-gradient-to-br from-emerald-950 via-teal-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute -left-8 bottom-0 w-44 h-44 rounded-full bg-emerald-400/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 text-xs font-heading font-semibold">04 &bull; Landscape Service</span>
+              <span class="text-xs text-emerald-200/80 font-medium">Lead Gen Ad</span>
+            </div>
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-2xl bg-emerald-500/15 border border-emerald-300/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 21h14M12 3c-4 4-6 7.5-6 10a6 6 0 0012 0c0-2.5-2-6-6-10z" />
+                </svg>
+              </div>
+              <p class="font-heading text-xl font-bold text-white tracking-wide">VERDANT LIVING</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-emerald-300 mt-0.5">Modern Garden &amp; Lawn Design</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-emerald-100/90 border-t border-emerald-200/15 pt-3">
+              <span>Free On-Site Consultation</span>
+              <span class="px-2.5 py-0.5 rounded bg-emerald-400 text-navy-950 font-bold">GET QUOTE</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">04. Landscape Service</h3>
+              <p class="text-sm text-slate-400 mt-2">Trust-building service advertisement tailored for outdoor architecture, garden care, and local home improvement brands.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 05: Travel Promotion -->
+        <article data-category="services" onclick="openConceptModal(4)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <div class="relative h-64 bg-gradient-to-br from-sky-950 via-blue-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute right-0 top-0 w-44 h-44 rounded-full bg-sky-400/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-200 text-xs font-heading font-semibold">05 &bull; Travel Promo</span>
+              <span class="text-xs text-sky-200/80 font-medium">Carousel / Post</span>
+            </div>
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-2xl bg-sky-500/15 border border-sky-300/30 flex items-center justify-center mb-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                <svg class="w-8 h-8 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </div>
+              <p class="font-heading text-xl font-bold text-white tracking-wide">HORIZON ESCAPES</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-sky-300 mt-0.5">Curated Island &amp; Hill Getaways</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-sky-100/90 border-t border-sky-200/15 pt-3">
+              <span>3D / 2N All-Inclusive</span>
+              <span class="px-2.5 py-0.5 rounded bg-sky-400 text-navy-950 font-bold">EXPLORE</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">05. Travel Promotion</h3>
+              <p class="text-sm text-slate-400 mt-2">Aspirational destination showcase designed for tour operators, boutique stays, and seasonal travel packages.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 06: Wellness Campaign -->
+        <article data-category="lifestyle" onclick="openConceptModal(5)" role="button" tabindex="0" aria-haspopup="dialog" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col">
+          <div class="relative h-64 bg-gradient-to-br from-purple-950 via-indigo-900 to-navy-900 p-6 flex flex-col justify-between overflow-hidden">
+            <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full bg-purple-400/20 blur-2xl group-hover:scale-125 transition-transform duration-500"></div>
+            <div class="flex items-center justify-between relative z-10">
+              <span class="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-xs font-heading font-semibold">06 &bull; Wellness Campaign</span>
+              <span class="text-xs text-purple-200/80 font-medium">Brand Series</span>
+            </div>
+            <div class="relative z-10 my-auto flex flex-col items-center text-center">
+              <div class="w-16 h-16 rounded-full bg-purple-500/15 border border-purple-300/30 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-purple-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <p class="font-heading text-xl font-bold text-white tracking-wide">SERENE RITUALS</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-purple-300 mt-0.5">Mindful Spa &amp; Holistic Care</p>
+            </div>
+            <div class="relative z-10 flex items-center justify-between text-xs text-purple-100/90 border-t border-purple-200/15 pt-3">
+              <span>First Session Wellness Pass</span>
+              <span class="px-2.5 py-0.5 rounded bg-purple-300 text-navy-950 font-bold">RESERVE</span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">06. Wellness Campaign</h3>
+              <p class="text-sm text-slate-400 mt-2">Calming, balanced visual storytelling built for spas, yoga studios, skincare lines, and holistic wellness brands.</p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-heading font-semibold text-violet-300">
+              <span>Preview Concept Details</span>
+              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CONCEPT 07: Technology Advertisement -->
+        <article data-category="tech" onclick="openConceptModal(6)" class="portfolio-card group cursor-pointer glass-card glass-card-hover rounded-3xl overflow-hidden flex flex-col md:col-span-2 lg:col-span-3">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <!-- Visual Banner Side -->
+            <div class="lg:col-span-7 relative min-h-[250px] bg-gradient-to-br from-violet-950 via-navy-800 to-orange-950 p-6 sm:p-8 flex flex-col justify-between overflow-hidden">
+              <div class="absolute right-8 top-1/2 -translate-y-1/2 w-56 h-56 rounded-full bg-violet-500/25 blur-3xl group-hover:scale-125 transition-transform duration-500"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-3 py-1 rounded-full bg-violet-500/25 border border-violet-400/40 text-violet-200 text-xs font-heading font-semibold">07 &bull; Technology Advertisement</span>
+                <span class="text-xs text-orange-300 font-heading font-semibold">Product Launch Feature</span>
+              </div>
+              <div class="relative z-10 my-6 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-orange-500 flex items-center justify-center text-white shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight">AURA PULSE PRO</p>
+                  <p class="text-xs sm:text-sm uppercase tracking-[0.22em] text-orange-300 mt-1">Next-Gen Spatial Audio &amp; Smart Sync</p>
+                </div>
+              </div>
+              <div class="relative z-10 flex items-center justify-between text-xs text-slate-200 border-t border-white/15 pt-3">
+                <span>Ultra-Low Latency &bull; 48H Battery</span>
+                <span class="px-3 py-1 rounded-lg gradient-accent text-white font-bold">PRE-ORDER NOW</span>
+              </div>
+            </div>
+
+            <!-- Details Side -->
+            <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-navy-800/40">
+              <div>
+                <span class="text-xs font-heading uppercase tracking-widest text-orange-400">Flagship Showcase</span>
+                <h3 class="text-2xl font-bold text-white mt-2 group-hover:text-orange-400 transition-colors">07. Technology Advertisement</h3>
+                <p class="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+                  Sleek, futuristic product launch creative combining dark glassmorphism, crisp feature callouts, and high-contrast conversion buttons for gadgets, apps, and SaaS tools.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-sm font-heading font-semibold text-violet-300">
+                <span>Preview Full Concept &amp; Specs</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       5. ABOUT US SECTION ("TWO FOUNDERS. ONE CREATIVE VISION.")
+  ========================================================== -->
+  <section id="about" class="relative z-10 py-20 lg:py-28 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Visual Card: Two Founders Synergy -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-8 border border-white/10 relative overflow-hidden">
+            <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-violet-600/20 blur-2xl"></div>
+            <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-orange-500/20 blur-2xl"></div>
+
+            <!-- Dual Monogram / Co-Founder Visual -->
+            <div class="relative z-10 flex items-center justify-center gap-4 mb-8">
+              <div class="w-20 h-20 rounded-2xl bg-violet-600/25 border border-violet-400/40 flex flex-col items-center justify-center shadow-lg">
+                <span class="font-heading text-2xl font-bold text-white">C</span>
+                <span class="text-[10px] uppercase tracking-widest text-violet-300">Creative</span>
+              </div>
+              <div class="w-10 h-10 rounded-full gradient-accent flex items-center justify-center text-white font-bold shadow-md">
+                &amp;
+              </div>
+              <div class="w-20 h-20 rounded-2xl bg-orange-500/25 border border-orange-400/40 flex flex-col items-center justify-center shadow-lg">
+                <span class="font-heading text-2xl font-bold text-white">S</span>
+                <span class="text-[10px] uppercase tracking-widest text-orange-300">Strategy</span>
+              </div>
+            </div>
+
+            <blockquote class="relative z-10 text-center">
+              <p class="font-heading text-lg sm:text-xl font-medium text-offwhite leading-relaxed">
+                “Every business already has a story worth telling—our role is to give that story the clarity, beauty, and visual confidence it deserves.”
+              </p>
+              <footer class="mt-4 text-xs uppercase tracking-[0.2em] text-slate-400">
+                Two Founders &bull; CS Chapters Studio
+              </footer>
+            </blockquote>
+
+            <!-- Three Core Brand Pillars -->
+            <div class="relative z-10 grid grid-cols-3 gap-3 mt-8 pt-6 border-t border-white/10 text-center">
+              <div class="p-3 rounded-2xl bg-white/5">
+                <p class="font-heading font-bold text-sm text-white">Modern</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Forward-thinking</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/5">
+                <p class="font-heading font-bold text-sm text-violet-300">Minimal</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Clean &amp; clear</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/5">
+                <p class="font-heading font-bold text-sm text-orange-400">Premium</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Crafted detail</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Story Content -->
+        <div class="lg:col-span-7">
+          <span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-orange-400">Our Story</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-offwhite mt-3 mb-6 leading-tight">
+            Two Founders. <br />
+            <span class="gradient-text">One Creative Vision.</span>
+          </h2>
+
+          <div class="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+            <p>
+              <strong class="text-white">CS Chapters</strong> was born from a shared belief between two founders: great design happens when structured strategy meets intuitive creativity.
+            </p>
+            <p>
+              Instead of relying on a single perspective, every project at CS Chapters benefits from two creative minds collaborating side by side—refining typography, color psychology, and messaging until every post and advertisement feels intentional.
+            </p>
+            <p>
+              Why <em class="text-white not-italic font-medium">“Chapters”</em>? Because whether you are launching your very first product or refreshing an established business, each campaign marks a new milestone in your brand’s journey. We are here to design that next chapter with you.
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-heading font-semibold text-sm text-white gradient-accent shadow-lg hover:scale-[1.02] transition-all">
+              <span>Work With Us</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="#portfolio" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-heading font-semibold text-sm text-slate-200 glass-card hover:text-white hover:border-white/20 transition-all">
+              <span>View Concept Samples</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FREQUENTLY ASKED QUESTIONS -->
+  <section id="faq" class="relative z-10 py-20 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10"><span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-violet-400">Good to know</span><h2 class="text-3xl sm:text-4xl font-bold text-white mt-3">Frequently asked questions</h2></div>
+      <div class="space-y-3">
+        <details class="glass-card rounded-2xl p-5"><summary class="cursor-pointer font-heading font-semibold text-white">How do I get a quotation?</summary><p class="text-sm leading-relaxed text-slate-400 mt-3">Send us your design requirements, approximate quantity, intended platform and deadline through the inquiry form. We’ll discuss the scope and provide a quotation before starting.</p></details>
+        <details class="glass-card rounded-2xl p-5"><summary class="cursor-pointer font-heading font-semibold text-white">Can you design in Sinhala and English?</summary><p class="text-sm leading-relaxed text-slate-400 mt-3">Yes. Tell us which language or combination of languages you need and provide the final wording when you contact us.</p></details>
+        <details class="glass-card rounded-2xl p-5"><summary class="cursor-pointer font-heading font-semibold text-white">Are the portfolio examples real client projects?</summary><p class="text-sm leading-relaxed text-slate-400 mt-3">The seven items currently shown are concept samples created by CS Chapters to demonstrate possible styles. They are not presented as paid client work.</p></details>
+        <details class="glass-card rounded-2xl p-5"><summary class="cursor-pointer font-heading font-semibold text-white">What information should I send?</summary><p class="text-sm leading-relaxed text-slate-400 mt-3">A short description of your business, the design you need, your target audience, preferred colours or references, wording, image assets and required delivery date will help us understand the project.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       6. INTERACTIVE WHATSAPP & CONTACT CONFIGURATION SECTION
+  ========================================================== -->
+  <section id="contact" class="relative z-10 py-20 lg:py-28 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-6 sm:p-10 lg:p-14 border border-white/10 relative overflow-hidden">
+        <!-- Decorative Corner Glow -->
+        <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-orange-500/15 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-violet-600/20 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          
+          <!-- Left: Direct Inquiry Builder -->
+          <div class="lg:col-span-7">
+            <span class="text-xs font-heading font-semibold uppercase tracking-[0.25em] text-orange-400">Let’s Collaborate</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-offwhite mt-2 mb-4">
+              Ready to Write Your Brand’s Next Chapter?
+            </h2>
+            <p class="text-slate-300 text-base leading-relaxed mb-8">
+              Select a service below and send us an instant WhatsApp message with your brand details—we’ll respond promptly with ideas and packages tailored to your goals.
+            </p>
+
+            <!-- Interactive Quick Inquiry Form -->
+            <form id="whatsapp-inquiry-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="client-name" class="block text-xs font-heading uppercase tracking-wider text-slate-400 mb-2">Your Name / Brand</label>
+                  <input type="text" id="client-name" autocomplete="name" placeholder="e.g., Kasun / Ceylon Roasters" class="w-full px-4 py-3.5 rounded-xl bg-navy-950/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition-colors" />
+                </div>
+                <div>
+                  <label for="service-select" class="block text-xs font-heading uppercase tracking-wider text-slate-400 mb-2">Service Interested In</label>
+                  <select id="service-select" required class="w-full px-4 py-3.5 rounded-xl bg-navy-950/80 border border-white/10 text-white focus:outline-none focus:border-violet-500 transition-colors">
+                    <option value="Social Media Designs">Social Media Designs</option>
+                    <option value="Product Advertisements">Product Advertisements</option>
+                    <option value="Promotional Graphics">Promotional Graphics</option>
+                    <option value="Instagram & Facebook Campaigns">Instagram &amp; Facebook Campaigns</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="project-notes" class="block text-xs font-heading uppercase tracking-wider text-slate-400 mb-2">Project Brief (Optional)</label>
+                <textarea id="project-notes" maxlength="1000" rows="3" placeholder="Tell us briefly about your business, product, or campaign timeline..." class="w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-violet-500 transition-colors"></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <button type="submit" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl font-heading font-semibold text-base text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-600/25 hover:-translate-y-0.5 transition-all">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+                    <path d="M12 2C6.486 2 2 6.486 2 12c0 1.815.49 3.591 1.421 5.151L2 22l4.989-1.392A9.954 9.954 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18.182c-1.576 0-3.116-.447-4.455-1.294l-.319-.202-3.307.923.941-3.224-.221-.332A8.148 8.148 0 013.818 12c0-4.512 3.67-8.182 8.182-8.182 4.512 0 8.182 3.67 8.182 8.182 0 4.512-3.67 8.182-8.182 8.182z"/>
+                  </svg>
+                  <span>Send Inquiry via WhatsApp</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right: Studio Contact Info & Quick WhatsApp Number Setup Panel -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="p-6 rounded-2xl bg-navy-950/70 border border-white/10">
+              <h3 class="font-heading text-lg font-bold text-white mb-2">Studio Direct Channels</h3>
+              <p class="text-sm text-slate-400 mb-5">Fast turnaround, transparent communication, and tailored visual packages.</p>
+              
+              <div class="space-y-3 text-sm">
+                <div class="flex items-center justify-between py-2 border-b border-white/5">
+                  <span class="text-slate-400">Studio Name</span>
+          <!-- Right: Studio Contact Info & Direct WhatsApp Card -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="p-6 sm:p-7 rounded-2xl bg-navy-950/70 border border-white/10">
+              <h3 class="font-heading text-lg font-bold text-white mb-2">Studio Direct Channels</h3>
+              <p class="text-sm text-slate-400 mb-5">Fast turnaround, transparent communication, and tailored visual packages.</p>
+              
+              <div class="space-y-3 text-sm">
+                <div class="flex items-center justify-between py-2.5 border-b border-white/5">
+                  <span class="text-slate-400">Studio Name</span>
+                  <span class="font-heading font-semibold text-white">CS Chapters</span>
+                </div>
+                <div class="flex items-center justify-between py-2.5 border-b border-white/5">
+                  <span class="text-slate-400">Team</span>
+                  <span class="font-medium text-slate-200">Two Founders &bull; One Vision</span>
+                </div>
+                <div class="flex items-center justify-between py-2.5 border-b border-white/5">
+                  <span class="text-slate-400">WhatsApp Direct</span>
+                  <a href="https://wa.me/94724925372?text=Hi%20CS%20Chapters!%20I%20would%20like%20to%20discuss%20a%20design%20project." target="_blank" rel="noopener noreferrer" class="font-mono font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+                    +94 72 492 5372
+                  </a>
+                </div>
+                <div class="flex items-center justify-between py-2.5">
+                  <span class="text-slate-400">Local Number</span>
+                  <span class="font-mono text-slate-200">072 492 5372</span>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-5 border-t border-white/10">
+                <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I visited your portfolio website and would like to start a new design project.')" class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl font-heading font-semibold text-sm text-white gradient-accent shadow-lg hover:opacity-95 transition-opacity">
+                  <span>Message Us Directly on WhatsApp</span>
+                  <span>&rarr;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       7. CLEAN FOOTER
+  ========================================================== -->
+  <footer class="relative z-10 border-t border-white/10 bg-navy-950/90 pt-14 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/10">
+        
+        <!-- Brand & Tagline -->
+        <div>
+          <a href="#home" class="flex items-center gap-3">
+            <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerCsGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#8B5CF6" />
+                  <stop offset="100%" stop-color="#F97316" />
+                </linearGradient>
+              </defs>
+              <path d="M32 14C20.954 14 12 22.059 12 32C12 41.941 20.954 50 32 50C38.5 50 43.5 46.8 43.5 41.5C43.5 36.2 38.5 33.8 32 32C25.5 30.2 21.5 27.8 21.5 23C21.5 18.2 26.2 14 33.5 14C40.5 14 46.5 17.5 49.5 22.5" 
+                    stroke="url(#footerCsGrad)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="50" cy="44" r="3.5" fill="#F97316" />
+            </svg>
+            <span class="font-heading font-bold text-lg tracking-wider text-white">CS CHAPTERS</span>
+          </a>
+          <p class="text-sm text-slate-400 mt-3 max-w-md">
+            “Every Brand Has a Story. Let’s Design Its Next Chapter.”
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap gap-6 text-sm text-slate-300">
+          <a href="#home" class="hover:text-white transition-colors">Home</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>&copy; <span id="current-year"></span> CS Chapters Creative Studio. Two Founders, One Creative Vision.</p>
+        <p>Crafted for modern digital brands &bull; Ready for GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       FLOATING WHATSAPP BUTTON
+  ========================================================== -->
+  <button type="button" onclick="openWhatsAppChat('Hi CS Chapters! I would like to inquire about your creative design services.')" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 pl-4 pr-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl shadow-emerald-950/60 hover:scale-105 active:scale-95 transition-all">
+    <svg class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+      <path d="M12 2C6.486 2 2 6.486 2 12c0 1.815.49 3.591 1.421 5.151L2 22l4.989-1.392A9.954 9.954 0 0012 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18.182c-1.576 0-3.116-.447-4.455-1.294l-.319-.202-3.307.923.941-3.224-.221-.332A8.148 8.148 0 013.818 12c0-4.512 3.67-8.182 8.182-8.182 4.512 0 8.182 3.67 8.182 8.182 0 4.512-3.67 8.182-8.182 8.182z"/>
+    </svg>
+    <span class="font-heading font-semibold text-sm hidden sm:inline">Chat on WhatsApp</span>
+  </button>
+
+  <!-- =========================================================
+       PORTFOLIO CONCEPT PREVIEW MODAL
+  ========================================================== -->
+  <div id="concept-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/85 backdrop-blur-md">
+    <div class="relative w-full max-w-2xl glass-card rounded-3xl border border-white/15 overflow-hidden shadow-2xl animate-[fadeIn_0.2s_ease-out]">
+      
+      <!-- Modal Header Banner -->
+      <div id="modal-banner" class="p-6 sm:p-8 bg-gradient-to-r from-violet-900 to-navy-900 border-b border-white/10 flex items-start justify-between gap-4">
+        <div>
+          <span id="modal-badge" class="inline-block px-3 py-1 rounded-full text-xs font-heading font-semibold bg-white/15 text-white mb-2">01 &bull; Concept</span>
+          <h3 id="modal-title" class="text-2xl sm:text-3xl font-bold text-white">Concept Title</h3>
+          <p id="modal-subtitle" class="text-sm text-slate-300 mt-1">Brand Example Subtitle</p>
+        </div>
+        <button type="button" onclick="closeConceptModal()" aria-label="Close Preview" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6">
+        <div>
+          <h4 class="text-xs font-heading uppercase tracking-widest text-orange-400 mb-2">Creative Direction &amp; Goal</h4>
+          <p id="modal-description" class="text-slate-300 text-sm sm:text-base leading-relaxed"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-navy-950/70 border border-white/10">
+            <p class="text-xs text-slate-400 uppercase tracking-wider">Deliverable Formats</p>
+            <p id="modal-formats" class="font-heading font-semibold text-sm text-white mt-1"></p>
+          </div>
+          <div class="p-4 rounded-2xl bg-navy-950/70 border border-white/10">
+            <p class="text-xs text-slate-400 uppercase tracking-wider">Ideal Business Fit</p>
+            <p id="modal-fit" class="font-heading font-semibold text-sm text-white mt-1"></p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-violet-600/10 border border-violet-500/25 text-xs text-slate-300">
+          <strong class="text-violet-300">Customizable Template:</strong> Want a similar visual direction tailored with your brand logo, product photos, and offer details? Let’s create it together.
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-end gap-3 pt-2">
+          <button type="button" onclick="closeConceptModal()" class="w-full sm:w-auto px-5 py-3 rounded-xl text-sm font-heading font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
+            Close Preview
+          </button>
+          <button type="button" id="modal-cta-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-heading font-semibold text-white gradient-accent shadow-lg hover:opacity-95 transition-opacity">
+            <span>Request Similar Design</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTIVE JAVASCRIPT LOGIC
+  ========================================================== -->
+  <script>
+    // Official Business WhatsApp Number (International format for wa.me)
+    const studioWhatsAppNumber = '94724925372';
+
+    // Initialize current year in footer on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+
+    // Open WhatsApp with a pre-filled message
+    function openWhatsAppChat(messageText) {
+      const encodedMsg = encodeURIComponent(messageText);
+      const waUrl = `https://wa.me/${studioWhatsAppNumber}?text=${encodedMsg}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Handle Contact Inquiry Form Submission
+    const inquiryForm = document.getElementById('whatsapp-inquiry-form');
+    if (inquiryForm) inquiryForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const clientName = document.getElementById('client-name').value.trim();
+      const service = document.getElementById('service-select').value;
+      const notes = document.getElementById('project-notes').value.trim();
+      let message = 'Hi CS Chapters!';
+      if (clientName) message += `\nMy name / brand: ${clientName}`;
+      message += `\nI'm interested in: ${service}.`;
+      if (notes) message += `\n\nProject details: ${notes}`;
+      message += '\n\nPlease share the next steps and quotation.';
+      openWhatsAppChat(message);
+    });
+
+    // 2. Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isHidden);
+      iconOpen.classList.toggle('hidden', isHidden);
+      iconClose.classList.toggle('hidden', !isHidden);
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
+
+    // 3. Portfolio Category Filter Tabs
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button styles
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-violet-600', 'text-white', 'shadow-lg', 'shadow-violet-600/25');
+          b.classList.add('text-slate-300', 'glass-card');
+        });
+        btn.classList.add('bg-violet-600', 'text-white', 'shadow-lg', 'shadow-violet-600/25');
+        btn.classList.remove('text-slate-300', 'glass-card');
+
+        const selectedCategory = btn.getAttribute('data-filter');
+
+        portfolioCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (selectedCategory === 'all' || cardCat === selectedCategory) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Make portfolio cards usable with keyboard as well as pointer.
+    document.querySelectorAll('.portfolio-card').forEach(card => {
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); card.click(); }
+      });
+    });
+
+    // 4. Portfolio Concept Details Data & Modal Controls
+    const conceptDetails = [
+      {
+        badge: '01 • Bakery Advertisement',
+        title: 'Golden Crumb — Artisan Bakery',
+        subtitle: 'Social Media Feed & Weekend Offer Graphic',
+        description: 'Designed to evoke warmth, freshness, and immediate appetite appeal. Combines rich amber tones, bold display typography, and a clear promotional offer badge to drive weekend foot traffic and pre-orders.',
+        formats: 'Instagram Square (1:1), Story (9:16), Facebook Ad',
+        fit: 'Bakeries, Cafes, Dessert Shops & Cloud Kitchens',
+        bannerClass: 'from-amber-900 via-orange-950 to-navy-900'
+      },
+      {
+        badge: '02 • Fashion Promotion',
+        title: 'Veloura — Autumn Capsule Drop',
+        subtitle: 'Editorial Lookbook & New Arrival Campaign',
+        description: 'A sleek, high-fashion promotional layout built with modern editorial spacing, subtle magenta-violet depth, and high-contrast call-to-action styling that lets apparel photography shine.',
+        formats: 'Instagram Carousel, Story Drop, Facebook Banner',
+        fit: 'Clothing Brands, Boutiques, Accessories & Footwear',
+        bannerClass: 'from-fuchsia-900 via-violet-950 to-navy-900'
+      },
+      {
+        badge: '03 • Restaurant Promotion',
+        title: 'Ember & Spice — Signature Dining',
+        subtitle: 'Combo Deal & Table Reservation Creative',
+        description: 'High-energy dining promotion tailored for social feeds and local Meta ads. Uses fiery accent highlights and structured menu callouts to convert hungry scrollers into booked tables or delivery orders.',
+        formats: 'Instagram Feed, Facebook Promo Post, Story Ad',
+        fit: 'Restaurants, Bistros, Food Trucks & Catering',
+        bannerClass: 'from-rose-900 via-red-950 to-navy-900'
+      },
+      {
+        badge: '04 • Landscape Service',
+        title: 'Verdant Living — Garden & Lawn Design',
+        subtitle: 'Local Lead-Generation Service Advertisement',
+        description: 'Clean, trustworthy service layout designed for outdoor transformations. Highlights key benefits and a clear “Free On-Site Consultation” hook to generate high-intent WhatsApp inquiries.',
+        formats: 'Facebook Lead Ad, Instagram Post, Digital Flyer',
+        fit: 'Landscaping, Architecture, Interior & Home Services',
+        bannerClass: 'from-emerald-900 via-teal-950 to-navy-900'
+      },
+      {
+        badge: '05 • Travel Promotion',
+        title: 'Horizon Escapes — Curated Getaways',
+        subtitle: 'Seasonal Tour Package & Staycation Showcase',
+        description: 'Aspirational travel campaign layout balancing crisp itinerary details with vibrant coastal and hill-country blues, encouraging followers to save, share, and book their next escape.',
+        formats: 'Multi-Slide Carousel, Instagram Story, Cover Banner',
+        fit: 'Travel Agencies, Boutique Hotels, Villas & Tour Guides',
+        bannerClass: 'from-sky-900 via-blue-950 to-navy-900'
+      },
+      {
+        badge: '06 • Wellness Campaign',
+        title: 'Serene Rituals — Holistic Spa & Care',
+        subtitle: 'Mindful Brand Awareness & Intro Pass Ad',
+        description: 'Balanced, calming visual composition built around soft purple gradients and breathable typography—ideal for communicating trust, relaxation, and self-care.',
+        formats: 'Instagram Feed Series, Story Highlights, Promo Card',
+        fit: 'Spas, Salons, Yoga Studios, Skincare & Clinics',
+        bannerClass: 'from-purple-900 via-indigo-950 to-navy-900'
+      },
+      {
+        badge: '07 • Technology Advertisement',
+        title: 'Aura Pulse Pro — Product Launch',
+        subtitle: 'Modern Gadget & Digital Product Showcase',
+        description: 'Sleek dark-mode commercial ad featuring electric violet glows, crisp spec callouts, and an unmistakable pre-order CTA built for consumer electronics, apps, and modern tech startups.',
+        formats: 'Meta Conversion Ad, Launch Banner, Product Card',
+        fit: 'Tech Stores, Mobile Accessories, SaaS & Startups',
+        bannerClass: 'from-violet-900 via-navy-800 to-orange-950'
+      }
+    ];
+
+    const modalEl = document.getElementById('concept-modal');
+
+    function openConceptModal(index) {
+      const item = conceptDetails[index];
+      if (!item) return;
+
+      document.getElementById('modal-badge').textContent = item.badge;
+      document.getElementById('modal-title').textContent = item.title;
+      document.getElementById('modal-subtitle').textContent = item.subtitle;
+      document.getElementById('modal-description').textContent = item.description;
+      document.getElementById('modal-formats').textContent = item.formats;
+      document.getElementById('modal-fit').textContent = item.fit;
+
+      const banner = document.getElementById('modal-banner');
+      banner.className = `p-6 sm:p-8 bg-gradient-to-r ${item.bannerClass} border-b border-white/10 flex items-start justify-between gap-4`;
+
+      const ctaBtn = document.getElementById('modal-cta-btn');
+      ctaBtn.onclick = () => {
+        openWhatsAppChat(`Hi CS Chapters! I loved your "${item.title}" concept and would like to create a similar design for my brand.`);
+      };
+
+      modalEl.classList.remove('hidden');
+      const closeButton = modalEl.querySelector('button[onclick="closeConceptModal()"]');
+      if (closeButton) closeButton.focus();
+      modalEl.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConceptModal() {
+      modalEl.classList.add('hidden');
+      modalEl.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click or Escape key
+    modalEl.addEventListener('click', (e) => {
+      if (e.target === modalEl) closeConceptModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modalEl.classList.contains('hidden')) {
+        closeConceptModal();
+      }
+    });
+  </script>
+</main>
+</body>
+</html>
